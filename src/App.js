@@ -66,31 +66,31 @@ function App() {
     'characterSplitter': {
       label: 'Character Splitter 🦜️🔗',
       language: null,
-      chunk_overlap_ind: true,
+      chunk_overlap_ind: false,
       defaultText: defaultProse
     },
     'recursiveCharacterTextSplitter': {
       label: 'Recursive Character Text Splitter 🦜️🔗',
       language: null,
-      chunk_overlap_ind: false,
+      chunk_overlap_ind: true,
       defaultText: defaultProse
     },
     'recursiveCharacterTextSplitterJS': {
       label: 'Recursive Character Text Splitter - JS 🦜️🔗',
       language: 'js',
-      chunk_overlap_ind: false,
+      chunk_overlap_ind: true,
       defaultText: defaultJS
     },
     'recursiveCharacterTextSplitterPython': {
       label: 'Recursive Character Text Splitter - Python 🦜️🔗',
       language: 'python',
-      chunk_overlap_ind: false,
+      chunk_overlap_ind: true,
       defaultText: defaultPython
     },
     'recursiveCharacterTextSplitterMarkdown': {
       label: 'Recursive Character Text Splitter - Markdown 🦜️🔗',
       language: 'markdown',
-      chunk_overlap_ind: false,
+      chunk_overlap_ind: true,
       defaultText: defaultMarkdown
     },
   }), []);
@@ -173,7 +173,7 @@ function App() {
       return [];
     }
     const splitter = new CharacterTextSplitter_ext({
-      separator: "",
+      separator: "\n\n",  #줄바꿈
       chunkSize: chunkSize,
       chunkOverlap: overlap,
       keepSeparator: true
